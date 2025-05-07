@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tokyo Weather</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
-    <script src="main.js"></script>
+
+  <main class="weather-container">
+    <img id="weather-img" src="img/sunny-j.png" alt="Weather" />
+    <div class="weather-content">
+      <h1 class="title">天気 – Tokyo Weather</h1>
+      <p id="temperature">Temperature: 22°C</p>
+      <p id="humidity">Humidity: 60%</p>
+      <p id="wind">Wind: 10 km/h</p>
+      <button onclick="location.reload()">Refresh</button>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
 </body>
 </html>
