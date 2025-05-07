@@ -17,7 +17,7 @@ async function UpdateInfo() {
         temp.textContent = "Temperature: " + info.hourly.temperature_2m[index] + "°C";
         var timeData = info.hourly.time[index].toString();
         var bet = timeData.slice(11);
-        time.textContent = "Time: " + bet;;
+        time.textContent = "Time: " + bet;
         index = (index + 1) % info.hourly.temperature_2m.length;
     }
     updateParagraph();
