@@ -9,15 +9,19 @@ async function fetchAPI() {
 async function UpdateInfo() {
     var info = await fetchAPI();
     var temp = document.querySelector('#temperature');
+    var time = document.querySelector("#time");
     let index = 0;
     console.log(info);
 
     function updateParagraph() {
         temp.textContent = "Temperature: " + info.hourly.temperature_2m[index] + "°C";
+        var timeData = info.hourly.time[index].toString();
+        var bet = timeData.slice(11);
+        time.textContent = "Time: " + bet;;
         index = (index + 1) % info.hourly.temperature_2m.length;
     }
     updateParagraph();
-    setInterval(updateParagraph, 120000);
+    setInterval(updateParagraph, 60000);
 }
 
 UpdateInfo();
