@@ -7,6 +7,8 @@ async function fetchAPI() {
 }
 
 async function UpdateInfo() {
+    var b = document.querySelector("button");
+    b.addEventListener("click",() => updateParagraph());
     var info = await fetchAPI();
     var temp = document.querySelector('#temperature');
     var time = document.querySelector("#time");
@@ -21,7 +23,7 @@ async function UpdateInfo() {
         index = (index + 1) % info.hourly.temperature_2m.length;
     }
     updateParagraph();
-    setInterval(updateParagraph, 60000);
+    setInterval(updateParagraph, 3000);
 }
 
 UpdateInfo();
